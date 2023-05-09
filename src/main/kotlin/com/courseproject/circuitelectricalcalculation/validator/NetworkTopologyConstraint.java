@@ -1,0 +1,15 @@
+package com.courseproject.circuitelectricalcalculation.validator;
+
+import javax.validation.Constraint;
+import javax.validation.Payload;
+import java.lang.annotation.*;
+
+@Documented
+@Constraint(validatedBy = NetworkTopologyValidator.class)
+@Target( { ElementType.METHOD, ElementType.FIELD })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface NetworkTopologyConstraint {
+    String message() default "Invalid network topology matrix";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+}
